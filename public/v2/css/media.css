@@ -1,0 +1,522 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+	/*Disable Animation on Mobile Devices*/
+	.animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+ 
+@media (min-width: 320px) and (max-width: 399px) { 
+#contact-title-1 {
+    width: 35%;
+    font-weight: bold;
+    margin-left: 36%;
+    margin-top: 0%;
+    font-size: 20px;
+    padding-top: 25px;
+}
+.description{
+    height: 200px;
+}
+.head-bg{
+    background-size: cover;
+}
+.head-menu{
+    height: 250px;
+}
+.logo-hub {
+    margin-left: 24%;
+    background-size: 180px 185px;
+    width: 180px;
+    height: 185px;
+}
+.main-menu{
+    left:0%;
+    top:0%;
+}
+.col-xs-2 {
+    width: 45.666667%;
+}
+
+.main-menu li a {
+    font-size: 11px;
+    padding-right: 7px;
+}
+.description .title {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20%;
+    font-size: 19px;
+    margin-left: 18%;
+    width: 70%;
+}
+.description .desc{
+    margin-top: 0%;
+    margin-left: 0%;
+}
+.description .desc {
+    margin-top: 85px;
+    margin-left: 23%;
+    height: 101px;
+    width: 70%;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+}
+#feature1 {
+    margin-top: -15px;
+}
+.feature{
+    font-size:8px;
+}
+.portfolio-item {
+    width: 100%;
+    height: 70px;
+}
+.features{
+    height: 850px;
+}
+.col-xs-2 {
+    width: 50.666667%;
+    margin-left: 15%;
+}
+.icon-two {
+    top: 2000px;
+    display: none;
+}
+.icon-one{
+    width: 140px;
+    height: 140px;
+    left: 28%;
+    display: none;
+}
+.title-desc-2 {
+    height: 170px;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 10%;
+    margin-left: 0%;
+    font-size: 17px;
+}
+.auth-btn{
+    width: 70%!important;
+    margin-left:15%;
+}
+.contact-card {
+    /* top: 6000px; */
+    /* left: 3%; */
+    bottom: 5%;
+    width: 100%;
+    height: 355px;
+    position: inherit;
+}
+.contacts {
+    display: none;
+    /* width: 100%; */
+    /* height: 15px; */
+    /* background-image: url("../img/map.png"); */
+}
+.partners{
+    display: none;
+}
+.col-md-offset-3 {
+    margin-left: 0%;
+}
+.price_card {
+    margin-top: 15px;
+}
+.price-block {
+    height: 1990px;
+}
+.rent-space{
+    height: 1330px;
+}
+#rent {
+    margin-top: 145px;
+}
+.rent-card{
+    margin-bottom: 10px;
+}
+
+#contact-title-1 {
+    font-size: 13px;
+}
+#contact-title-3 {
+    font-size: 21px;
+}
+.contact-telephone {
+    padding-top: 15px;
+}
+
+a.btn.green{
+    font-size: 20px;
+}
+#contact-title-2 {
+    font-size: 25px;
+    margin-left: 15%;
+    margin-top: 45px;
+    /* font-weight: normal; */
+}
+
+}
+
+/* Extra Small Devices, Phones */
+@media (min-width: 400px) and (max-width: 767px) { 
+.head-menu {
+    height: 300px;
+}
+.head-bg{
+    background-size: cover;
+}
+.logo-hub{
+    margin-left: 27%;
+    /* padding-top: 125px; */
+    background-size: 250px 187px;
+    width: 250px;
+    height: 250px
+}
+.main-menu{
+	left:0%;
+    top:70%;
+}
+.col-xs-2 {
+    width: 45.666667%;
+}
+
+.main-menu li a {
+    font-size: 11px;
+    padding-right:20px; 
+}
+.description {
+    height: 250px;
+}
+.description .title {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20%;
+    font-size: 25px;
+    margin-left: 15%;
+    width: 70%;
+}
+.description .desc{
+	margin-top: 0%;
+    margin-left: 0%;
+}
+.description .desc {
+    margin-top: 85px;
+    margin-left: 23%;
+    height: 101px;
+    width: 70%;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+}
+#feature1 {
+    margin-top: -15px;
+}
+.feature{
+    font-size:11px;
+}
+.portfolio-item {
+    width: 95%;
+    height: 70px;
+}
+.features{
+	height: 850px;
+}
+.col-xs-2 {
+    width: 47.666667%;
+}
+.icon-two{
+	top:3105px;
+    display: none;
+}
+.icon-one {
+    width: 100px;
+    height: 100px;
+    left: 36%;
+    top:316px;
+    left:42%;
+    background-size: 100px 100px;
+}
+.title-desc-2 {
+    text-align: center;
+    height: 170px;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 18%;
+    margin-left: 0%;
+    font-size: 17px;
+}
+.auth-btn{
+	width: 70%!important;
+	margin-left:15%;
+}
+.contact-card {
+    bottom: 5%;
+    left: 3%;
+    width: 400px;
+    height: 400px;
+}
+.partners{
+    display: none;
+}
+.col-md-offset-3 {
+    margin-left: 6%;
+}
+.price_card {
+    margin-top: 15px;
+}
+.price-block {
+    height: 1100px;
+}
+#rent {
+    margin-top: 160px;
+}
+.rent-card{
+    margin-bottom: 10px;
+}
+
+#contact-title-1 {
+    font-size: 16px;
+}
+
+#it-group {
+    color: red;
+    padding-left: 25%;
+}
+
+}
+
+/* Small Devices, Tablets */
+@media (min-width: 768px) and (max-width: 991px) { 
+.head-bg{
+    background-size: cover;
+}
+.logo-hub{
+	margin-left: 17%;
+    width: 80%;
+    height:100%;
+}
+.main-menu{
+	left:18%;
+}
+.description .title {
+    margin-top: 0px;
+    padding-top: 135px;
+    margin-left: 22%;
+    font-size: 35px;
+    width: 80%;
+}
+.description .desc{
+	margin-top: 120px;
+    margin-left: 30%;
+}
+#feature1 {
+    margin-top: -15px;
+}
+.portfolio-item{
+	width: 82%; 
+    height: 70px; 
+}
+.features{
+	height: 850px;
+}
+.col-xs-2 {
+    width: 24.666667%;
+}
+.icon-two{
+	top:2684px;
+}
+.title-desc-2 {
+    height: 170px;
+    width: 90%;
+    margin-top: 0px;
+    padding-top: 8%;
+    margin-left: 11%;
+    font-size: 25px;
+}
+.auth-btn{
+	width: 470px!important;
+	margin-left:22%;
+}
+.contact-card {
+    bottom: 5%;
+    left: 20%;
+}
+
+#it-group {
+    color: red;
+    margin-left: 35%;
+    width: 300px;
+}
+
+}
+
+/* Medium Devices, Desktops */
+@media (min-width: 992px) and (max-width: 1199px) { 
+	
+.description .title {
+    margin-top: 150px;
+    margin-left: 25%;
+    font-size: 36px;
+    width: 61%;
+    height: 35px;
+}
+.description .desc {
+    margin-top: 45px;
+    margin-left: 25%;
+    height: 101px;
+    width: 60%;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: rgb(138, 138, 138);
+}
+.col-md-2{
+	width: 19.6%;
+}
+.col-md-offset-4 {
+    margin-left:15%;
+}
+.col-md-9{
+	width: 100%;
+}
+.title-desc-2 {
+    width: 70%;
+    height: 80px;
+    padding-left: 7%;
+}
+
+.icon-two {
+	display: none;
+    top: 2657px;
+    left: 49%;
+}
+.auth-btn{
+	width: 470px!important;
+	margin-left:30%;
+}
+
+.contact-card {
+    bottom: 5%;
+    left: 30%;
+}
+
+.main-menu {
+  left: 26%;
+}
+#it-group {
+    width: 30%;
+}
+
+}
+
+/* Large Devices, Wide Screens */
+@media (min-width: 1200px) and (max-width: 1800px) { 
+.col-md-9 {
+    width: 100%;
+}
+
+.col-md-offset-4 {
+    margin-left: 20%;
+}
+
+.title-desc-2{
+    padding-top: 3%;
+    padding-left: 10%;
+    font-size: 20px;
+    width: 65%;
+}
+.icon-two{
+	left: 50%;
+}
+.icon-one{
+    left: 45%;
+}
+.main-menu {
+    left: 30%;
+}
+
+.description .desc {
+    margin-top: 70px;
+    margin-left:25%;
+}
+.description .title {
+    margin-left:34%;
+}
+
+.logo-hub {
+    margin-left: 30%;
+    width:60%;
+}
+.col-md-offset-3 {
+  margin-left: 26%;
+}
+
+}
+
+@media (min-width: 1024px) and (max-width: 1425px) { 
+.col-md-offset-3 {
+  margin-left: 22%;
+}
+.logo-hub {
+    margin-left: 27%;
+    width:60%;
+}
+.col-md-8 {
+    width: 77.666667%;
+}
+.feature{
+	font-size: 10px;
+}
+.col-md-4 {
+    width: 47%;
+    height: 80px;
+}
+
+}
