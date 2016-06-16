@@ -22,7 +22,7 @@
 <body>
 <div class="image-container set-full-height" style="background-image: url('../img/map.png')">
     <!--   Creative Tim Branding   -->
-    <a href="http://creative-tim.com">
+    <a href="/user/<?=$user;?>">
          <div class="logo-container">
             <!--<div class="logo">
                 <img src="assets/img/new_logo.png">
@@ -73,7 +73,7 @@
                                             </select>
                                           </div>
                                   </div>
-                                  <div class="col-sm-5">
+                                  <!--<div class="col-sm-5">
                                       <div class="form-group">
                                           <label>Accommodates</label>
                                           <select class="form-control">
@@ -86,9 +86,9 @@
                                             <option>6+ Persons</option>
                                           </select>
                                       </div>
-                                  </div>
+                                  </div>-->
 
-                                  <div class="col-sm-5 col-sm-offset-1">
+                                  <div class="col-sm-5 ">
                                       <div class="form-group">
                                         <label>Дата</label>
                                         <div class="controls">
@@ -97,11 +97,11 @@
                                       </div>
                                   </div>
 
-                                  <div class="col-sm-5">
+                                  <div class="col-sm-6 col-sm-offset-3">
                                       <div class="form-group">
                                           <label>Номер столика</label>
                                           <div class="input-group">
-                                              <input type="text" name="place" class="form-control" placeholder="номер места">
+                                              <input type="text" name="place" class="form-control" id="placenumber" placeholder="номер места">
                                               <span class="input-group-addon"></span>
                                           </div>
                                       </div>
@@ -156,7 +156,7 @@
                         </div>
                         <div class="wizard-footer">
                               <div class="pull-right">
-                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd btn-sm' name='next' value='Далее' />
+                                    <input type='button' class='btn btn-next btn-fill btn-success btn-wd btn-sm' id="nextbtn" name='next' value='Далее' />
                                     <input type='submit' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Подтвердить' />
         
                                 </div>
@@ -251,8 +251,8 @@ $(document).on('click', function (e) {
         $(".btn-select").removeClass("active").find("ul").hide();
     }
 });
-
-$("#select-btn").on('click',function(){
+*/
+$("#placenumber").on('change',function(){
 
 	$.ajaxSetup({
       headers: {
@@ -260,19 +260,26 @@ $("#select-btn").on('click',function(){
       }
   })
 
-	var selected_item = $("#place_number option:selected").val();
-	var time =  $("#time option:selected").val();
-	var datetime = $("#datetime").val();
-	console.log(datetime);
+	var placenumber = $("#placenumber").val();
+	console.log(placenumber);
+	//console.log(datetime);
 
 	$.ajax({
 		type: "POST",
-		url: "/book",
-		data: "time="+time+"&selected_item="+selected_item+"&datetime="+datetime,
+		url: "/checkplace",
+		data: "placenumber="+placenumber,
 		success: function(msg){
-			console.log( "Data Saved: " + msg );
+			console.log( "result: " + msg );
+      if(msg === '1'){
+        $("#nextbtn").attr('disabled','disabled');
+        console.log("booked");
+        alert("к сожалению это место уже занято,выберите другое)");
+      }else{
+        $("#nextbtn").removeAttr('disabled');
+        console.log("free");
+      }
 		}
-		error: function(data){
+		/*error: function(data){
         
         var errors = data.responseJSON;
 
@@ -284,9 +291,9 @@ $("#select-btn").on('click',function(){
                 text: value
             });
         });
-    }
+    }*/
 	})
-});*/
+});
 	</script>
 
 	<script type="text/javascript">

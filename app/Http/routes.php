@@ -11,6 +11,9 @@ Route::get('/en', 'MainController@index');
 
 
 Route::get('/user/{id}',['middleware' => 'auth','uses'=> 'MainController@getuser']);
+
+Route::get('/adminpage','MainController@getadmin');
+
 //auth routes
 Route::get('/auth/logout','AccountController@logout');
 
@@ -20,7 +23,15 @@ Route::get('/places',['middleware' => 'auth','uses'=>'MainController@places']);
 
 Route::post('/bookplace',['middleware' => 'auth','uses'=>'MainController@bookplace']);
 
+Route::get('/unbook/{id}','MainController@unbook');
+
+Route::post('/checkplace','MainController@checkplace');
+
+
+
 //Route::get('/auth', ['middleware' => 'guest','uses'=>'MainController@render_auth']);
+
+Route::post('/standartauth','AccountController@standartauth');
 
 Route::get('github', 'AccountController@github_redirect');
 

@@ -98,6 +98,19 @@
                         </p>-->
                     </div>
                 </div>
+                @if(isset($order))
+                <div class="panel-body">
+                    <div class="text-center" id="author">
+                        <p>Ваш заказ:</p>
+                        <p>место:<?=$order["id"];?></p>
+                        <p>способ оплаты:<?=$order["billing_type"];?></p>
+                        <p>время:<?=$order["date_time"];?></p>
+                        <p>продолжительность:<?=$order["time_spend"];?>&nbsp;&nbsp;дней</p>
+                    </div>
+                </div>
+                @endif
+
+
             </div>
         </div>
         <div class="col-lg-8 col-md-8 col-xs-12">

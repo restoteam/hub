@@ -80,16 +80,44 @@ class MainController extends Controller {
 
 		$order = Place::whereIn('user_id', ["$id"])->get();
 
-		dd($order);
-		return view('user',['data'=>$user]);
+		if(count($order)!= 0){
 
+			$result = $order[0]['attributes'];
+
+			return view('user',['data'=>$user,'order'=>$result]);
+
+		}else{
+
+			return view('user',['data'=>$user]);
+
+		}
+
+	}
+
+	public function getadmin(){
+
+		$orders = Place::all();
+
+		return view('admin',['orders'=>$orders]);
 	}
 
 	public function places(){
-		return view('places');
+		$current_user = Auth::user();
+		$cuser = $current_user["id"];
+
+		return view('places',['user'=>$cuser]);
 	}
 
 	public function signinpage(){
+
+		if (Auth::check())
+		{	
+			$current_user = Auth::user();
+			$cuser = $current_user["id"];
+
+		    return redirect("/user/$cuser");
+		}
+
 		return view('signin');
 	}
 
@@ -122,6 +150,34 @@ class MainController extends Controller {
 
 		//dd($request);
 
+
+	}
+
+	public function checkplace(Request $request){
+
+		$placenumber = $request->placenumber;
+
+		$find_place = Place::find($placenumber);
+
+		$current_place = $find_place['attributes']['is_book'];
+
+		return $current_place;
+	}
+
+	public function unbook($id){
+
+		$model = Place::find($id);
+		$model->time_spend = 0;
+		$model->date_time = 0;
+		$model->is_book = 0;
+		$model->user_id = 0;
+		$model->billing_type = 0;
+		$model->additional_desc = 0;
+
+		if($model->save())
+		{
+			return redirect("/adminpage");
+		}
 
 	}
 

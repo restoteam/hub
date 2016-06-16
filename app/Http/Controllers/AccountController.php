@@ -48,6 +48,11 @@ class AccountController extends Controller {
     return redirect("/user/$userid");
 
   }
+/*
+  public function standartauth(Request $request){
+      $login 
+      $email
+  }*/
 
   public function logout(){
 
