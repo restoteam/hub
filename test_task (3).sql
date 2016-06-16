@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 12 2016 г., 01:58
+-- Время создания: Июн 16 2016 г., 11:42
 -- Версия сервера: 5.5.45
 -- Версия PHP: 5.6.12
 
@@ -56,26 +56,17 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `posts`
+-- Структура таблицы `places`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `parent_id` int(11) NOT NULL,
-  `post_text` text COLLATE utf8_unicode_ci NOT NULL,
-  `post_time` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `places` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `is_book` int(11) NOT NULL,
+  `date_time` varchar(256) NOT NULL,
+  `time_spend` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
-
---
--- Дамп данных таблицы `posts`
---
-
-INSERT INTO `posts` (`id`, `parent_id`, `post_text`, `post_time`) VALUES
-(1, 0, 'test comment', 1463007300),
-(2, 1, 'responce to comment', 1463007311),
-(3, 0, 'test second comment', 1463007345),
-(4, 1, 'responce to seccond comment', 1463007363);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -94,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `users`
@@ -103,7 +94,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `github_id`, `facebook_id`, `name`, `email`, `avatar`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, '8645393', '', 'bogdantarasenko', 'apogel@yandex.ru', 'https://avatars.githubusercontent.com/u/8645393?v=3', 'SU9P4LogL7HJcihCHuA6UIleYHkBrrektPqAHdyQkXjZprR07PcHXURsF6Ww', '2016-05-11 19:54:46', '2016-05-11 19:56:21'),
 (2, '', '1715940225354661', 'Богдан Тарасенко', 'apogel@yandex.ru', 'https://graph.facebook.com/v2.5/1715940225354661/picture?type=normal', 'wTb3t9CZ5Yd87z3uQoH1hTPNgbpivYTU23lw1iqlQsInzMh1KintXU7yAcUs', '2016-05-11 19:55:35', '2016-05-11 19:57:41'),
-(3, '', '717676925047101', 'Bogdan Tarasenko', 'apogel41@yandex.ru', 'https://graph.facebook.com/v2.5/717676925047101/picture?type=normal', 'FYeQeeBxbjkd6XMZOZeUkWfuEkoGkBYuZpFB53OlSq4Lb9swkvSKw1NtcILV', '2016-05-11 19:57:54', '2016-05-11 19:57:54');
+(3, '', '717676925047101', 'Bogdan Tarasenko', 'apogel41@yandex.ru', 'https://graph.facebook.com/v2.5/717676925047101/picture?type=normal', 'FYeQeeBxbjkd6XMZOZeUkWfuEkoGkBYuZpFB53OlSq4Lb9swkvSKw1NtcILV', '2016-05-11 19:57:54', '2016-05-11 19:57:54'),
+(4, '', '1724591751156175', 'Богдан Тарасенко', 'apogel@yandex.ru', 'https://graph.facebook.com/v2.6/1724591751156175/picture?type=normal', 'JdY0tJwlxuL9E44L3NDWOr1SR9iSWe5UVIfCnU39TDOa8qUIPKBLeVryve5T', '2016-06-15 13:41:03', '2016-06-15 13:41:03');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

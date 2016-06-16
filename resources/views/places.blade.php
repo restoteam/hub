@@ -41,9 +41,9 @@
             <!--      Wizard container        -->   
             <div class="wizard-container"> 
                 <div class="card wizard-card ct-wizard-green" id="wizard">
-                <form action="" method="">
+                <form action="/bookplace" method="post">
                 <!--        You can switch "ct-wizard-azzure"  with one of the next bright colors: "ct-wizard-blue", "ct-wizard-green", "ct-wizard-orange", "ct-wizard-red"             -->
-                
+                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                       <div class="wizard-header">
                           <h3>
                              <b>Выберите</b> ваше место <br>
@@ -66,7 +66,7 @@
                                   <div class="col-sm-5 col-sm-offset-1">
                                        <div class="form-group">
                                             <label>На сколько времени</label><br>
-                                             <select name="country" class="form-control">
+                                             <select name="timespend" class="form-control">
                                                 <option value="1"> день </option>
                                                 <option value="7"> неделя </option>
                                                 <option value="30"> месяц </option>
@@ -92,7 +92,7 @@
                                       <div class="form-group">
                                         <label>Дата</label>
                                         <div class="controls">
-                                          <input class="datepicker form-control" type="text"/>
+                                          <input class="datepicker form-control" name="date" type="text"/>
                                       </div>
                                       </div>
                                   </div>
@@ -101,7 +101,7 @@
                                       <div class="form-group">
                                           <label>Номер столика</label>
                                           <div class="input-group">
-                                              <input type="text" class="form-control" placeholder="номер места">
+                                              <input type="text" name="place" class="form-control" placeholder="номер места">
                                               <span class="input-group-addon"></span>
                                           </div>
                                       </div>
@@ -114,7 +114,7 @@
                                     <div class="col-sm-10 col-sm-offset-1">
                                         <div class="col-sm-4 col-sm-offset-2">
                                             <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Выберите удобный для вас метод оплаты">
-                                                <input type="radio" name="type" value="House">
+                                                <input type="radio" name="type" value="offline">
                                                 <div class="icon">
                                                     <i class="fa fa-money"></i>
                                                 </div>
@@ -123,7 +123,7 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="choice" data-toggle="wizard-radio" rel="tooltip" title="Выберите удобный для вас метод оплаты">
-                                                <input type="radio" name="type" value="Appartment">
+                                                <input type="radio" name="type" value="online">
                                                 <div class="icon">
                                                     <i class="fa fa-briefcase"></i>
                                                 </div>
@@ -140,7 +140,7 @@
                                     <div class="col-sm-6 col-sm-offset-1">
                                          <div class="form-group">
                                             <label>Описание</label>
-                                            <textarea class="form-control" placeholder="" rows="9">
+                                            <textarea class="form-control" name="add_desc" placeholder="" rows="9">
                                                 
                                             </textarea>
                                           </div>
@@ -157,7 +157,7 @@
                         <div class="wizard-footer">
                               <div class="pull-right">
                                     <input type='button' class='btn btn-next btn-fill btn-success btn-wd btn-sm' name='next' value='Далее' />
-                                    <input type='button' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Подтвердить' />
+                                    <input type='submit' class='btn btn-finish btn-fill btn-success btn-wd btn-sm' name='finish' value='Подтвердить' />
         
                                 </div>
                                 <div class="pull-left">

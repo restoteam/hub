@@ -18,6 +18,8 @@ Route::get('/auth/signin','MainController@signinpage');
 
 Route::get('/places',['middleware' => 'auth','uses'=>'MainController@places']);
 
+Route::post('/bookplace',['middleware' => 'auth','uses'=>'MainController@bookplace']);
+
 //Route::get('/auth', ['middleware' => 'guest','uses'=>'MainController@render_auth']);
 
 Route::get('github', 'AccountController@github_redirect');
@@ -30,4 +32,4 @@ Route::get('/socialite/facebook/callback', 'AccountController@facebook');
 
 //--------------------
 
-Route::post('/book',['middleware' => 'auth','uses'=>'MainController@bookplace']);
+//Route::post('/book',['middleware' => 'auth','uses'=>'MainController@bookplace']);

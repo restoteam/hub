@@ -77,7 +77,10 @@ class MainController extends Controller {
 	public function getuser($id){
 
 		$user = User::find($id);
-	//	dd($user['attributes']);
+
+		$order = Place::whereIn('user_id', ["$id"])->get();
+
+		dd($order);
 		return view('user',['data'=>$user]);
 
 	}
@@ -93,23 +96,31 @@ class MainController extends Controller {
 	public function bookplace(Request $request){
 		//return "time=".$request->time." datetime=".$request->datetime." selected_item=".$request->selected_item;
 
-		$place = Place::find($request->selected_item);
+		$place = Place::find($request->place);
 		$current_user = Auth::user();
+		$cuser = $current_user["id"];
 
 		if($place["is_book"] == 0){
 
-			$model = new Place;
-			$model->time_spend = $request->time;
-			$model->date_time = $request->datetime;
+			$model = Place::find($request->place);
+			$model->time_spend = $request->timespend;
+			$model->date_time = $request->date;
 			$model->is_book = 1;
 			$model->user_id = $current_user["id"];
+			$model->billing_type = $request->type;
+			$model->additional_desc = $request->add_desc;
 
-			$model->save();
+			if($model->save()){
+				return redirect("user/$cuser");
+			}
 			//$res = DB::update('update places set time_spend = ? and date_time = ? and is_book = 1 and user_id = ? where id = ?', ["$request->time","$request->datetime","$current_user['id']"]);
 
 		}else{
 			return 0;
 		}
+		
+
+		//dd($request);
 
 
 	}
