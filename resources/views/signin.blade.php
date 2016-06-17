@@ -119,6 +119,7 @@
 		<div class="row omb_row-sm-offset-3">
 			<div class="col-xs-12 col-sm-6">
 			    <form class="omb_loginForm" action="/standartauth" autocomplete="off" method="POST">
+					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
 					<div class="input-group">
 						<span class="input-group-addon"><i class="fa fa-user"></i></span>
 						<input type="text" class="form-control" name="username" placeholder="email address">

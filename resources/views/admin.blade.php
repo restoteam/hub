@@ -26,10 +26,10 @@
     <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
             Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
     -->
-        <!--
+        
         <div class="toolbar">
-            <button id="alertBtn" class="btn btn-default">Alert</button>
-        </div>-->
+            <a href="/auth/logout"><button class="btn btn-default">выйти</button></a>
+        </div>
         
         <table id="fresh-table" class="table">
             <thead>

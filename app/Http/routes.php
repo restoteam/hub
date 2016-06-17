@@ -12,7 +12,7 @@ Route::get('/en', 'MainController@index');
 
 Route::get('/user/{id}',['middleware' => 'auth','uses'=> 'MainController@getuser']);
 
-Route::get('/adminpage','MainController@getadmin');
+Route::get('/adminpage',['middleware' => 'admin','uses' => 'MainController@getadmin']);
 
 //auth routes
 Route::get('/auth/logout','AccountController@logout');

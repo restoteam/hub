@@ -3,6 +3,8 @@ use Redirect;
 use Socialize;
 use Auth;
 use App\User;
+use Session;
+use Illuminate\Http\Request;
 class AccountController extends Controller {
   // Controller for working with authentication
 
@@ -18,6 +20,8 @@ class AccountController extends Controller {
   }
   // to get authenticate user data
   public function github() {
+
+    Session::put('admin', 0);
 
     $user = Socialize::with('github')->user();
 
@@ -36,6 +40,8 @@ class AccountController extends Controller {
   //get facebook user data
   public function facebook(){
 
+    Session::put('admin', 0);
+
     $user = Socialize::with('facebook')->user();
 
     $authUser = $this->findOrCreateUser($user,'facebook');
@@ -48,11 +54,17 @@ class AccountController extends Controller {
     return redirect("/user/$userid");
 
   }
-/*
+
   public function standartauth(Request $request){
-      $login 
-      $email
-  }*/
+      $login = $request->username;
+      $password = $request->password;
+
+      if($login == 'admin' and $password == 'admin'){
+        Session::put('admin', 1);
+        return redirect('/adminpage');
+      }
+
+  }
 
   public function logout(){
 
